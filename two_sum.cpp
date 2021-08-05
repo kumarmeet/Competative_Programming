@@ -34,3 +34,34 @@ vector<int> twoSum(vector<int>& nums, int target)
     }
     return return_size;
 }
+
+// using hasing 
+
+vector<int> twoSum(vector<int>& nums, int target) {
+     vector<int> return_size;
+    int two = 2;
+    int hash_i[2][nums.size()] {0};
+
+    for(int key = 0, value = 0; key < nums.size();)
+    {
+        hash_i[0][key++] = nums.at(key);
+        hash_i[1][value] = value;
+        value++;
+    }
+
+    int flag{0};
+
+    for(int i = 1; i < nums.size(); i++)
+    {
+      if(target - hash_i[0][flag] == nums.at(i))
+      {
+        return_size.push_back(hash_i[1][flag]);
+        return_size.push_back(hash_i[1][i]);
+        break;
+      }
+      flag++;
+    }
+
+    return return_size;
+    } // O(1)
+
