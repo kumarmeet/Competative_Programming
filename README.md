@@ -1,2 +1,2 @@
-# Competative_Programming
-Solved Problems from various coding challanges websites
+# Competative_Programming (Leetcode)
+Solved Problems from leetcode coding challanges
