@@ -1,0 +1,26 @@
+
+  struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+  };
+ 
+class Solution {
+public:
+    int rangeSumBST(TreeNode* root, int low, int high) {
+
+    int sum{0};
+
+    if(root)
+    {
+         sum += rangeSumBST(root->left, low, high);
+        if(root->val >= low && root->val <= high)
+        {
+            sum += root->val;
+        }
+        sum += rangeSumBST(root->right, low, high);
+    }
+
+    return sum;
+}
+};
