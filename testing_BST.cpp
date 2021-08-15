@@ -20,7 +20,7 @@ TreeNode *newNode(int item){
 TreeNode* Insert(TreeNode* root, int value){
     if (!root)
         return newNode(value);
-    If (value > root->val)
+    if (value > root->val)
         root->right = Insert(root->right, value);
     else
         root->left = Insert(root->left, value);
