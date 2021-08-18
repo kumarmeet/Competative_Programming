@@ -6,14 +6,11 @@ using namespace std;
 vector<int> luckyNumbers (vector<vector<int>>& matrix) 
 {
     vector<int> lucky;
-    int min=99999, max=0, pos=0, i, j, k;
+    int min = INT16_MAX, max = INT16_MIN, pos = 0, i, j, k;
 
-    int m = matrix.size();
-    int n = matrix[0].size();
-
-    for(k = 0; k < m; k++)
+    for(k = 0; k < matrix.size(); k++)
     {
-        for(i = 0; i < n; i++)
+        for(i = 0; i < matrix[0].size(); i++)
         {
             if(matrix[k][i] < min)
             {
@@ -22,7 +19,7 @@ vector<int> luckyNumbers (vector<vector<int>>& matrix)
             }
         }
 
-        for(j = 0; j < m; j++)
+        for(j = 0; j < matrix.size(); j++)
         {
             if(matrix[j][pos] > max)
                 max = matrix[j][pos];
@@ -31,8 +28,8 @@ vector<int> luckyNumbers (vector<vector<int>>& matrix)
         if(min == max)
             lucky.push_back(min);
 
-        min = 999999;
-        max = 0;
+        min = INT16_MAX;
+        max = INT16_MIN;
     }
 
     return lucky;
