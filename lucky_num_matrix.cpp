@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include<string>
+#include<limits>
 
 using namespace std;
 
@@ -34,14 +34,14 @@ vector<int> luckyNumbers (vector<vector<int>>& matrix)
 
     return lucky;
 }
+
 int main()
 {
     vector<vector <int>> matrix 
     {
-        {36376,85652,21002,4510},
-        {68246,64237,42962,9974}, 
-        {32768,97721,47338,5841},
-        {55103,18179,79062,46542}
+        {1, 10, 4, 2},
+        {9,  3, 8, 7}, 
+        {15,16,17,12}
     };
 
     vector<int> lucky = luckyNumbers(matrix);
