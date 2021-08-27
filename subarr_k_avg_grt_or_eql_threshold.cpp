@@ -15,22 +15,14 @@ int numOfSubarrays(vector<int>& arr, int k, int threshold)
 
       if(j - i + 1 == k)
       {
-        total.push_back(sum / k);
+        if((sum / k) >= threshold)
+          total.push_back(sum / k);
         sum -= arr[i];
         i++; 
       } 
       j++;
   }
-  sort(total.begin(), total.end(), greater<double>());
-  int count = 0;
-  for (int i = 0; i < total.size(); i++)
-  {
-    if(total[i] >= threshold)
-      count++;
-    else
-      break;
-  }
-  return count;
+  return total.size();
 }
 
 int main()
