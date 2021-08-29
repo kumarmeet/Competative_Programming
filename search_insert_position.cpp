@@ -22,6 +22,12 @@ int searchInsert(vector<int> &nums, int target)
     return low;
 }
 
+int searchInsertSTL(vector<int> &nums, int target)
+{
+    auto low = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+    return low;
+}
+
 int main()
 {
     vector<int> v{1, 3, 5, 6};
